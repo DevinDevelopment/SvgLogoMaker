@@ -1,9 +1,14 @@
 // imports. requrire is needed to use functions defined in generateMarkdown file
 // inquirer is a node.js library and is need to ask questions in command line and store answers
 // fs needed to gain access to file structor functions 
-const generateSvgFile = require('./lib/generateSvgFile');
 const inquirer = require('inquirer');
 const fs = require('fs');
+const {circle} = require('./lib/circle');
+const {triangle} = require('./lib/triangle');
+const {square} = require('./lib/square');
+const {text} = require('./lib/text');
+
+
 
 // this is used as a question bank
 const questions = [
@@ -52,7 +57,27 @@ function init() {
   // the data perameter will take the users response and push to our generateMarkdown function from the generateMarkdown file
   // generateMarkdown will be a function we are calling from another file which is why import require is needed
   .then((response) => {
-    writeToFile('GeneratedREADME.MD', generateSvgFile.generateSvgFile(response));
+    // if((response.text).length() != 2){
+    //   console.log("text must be 3 characters long, try again!")
+    //   init();
+    // }
+    // else{
+      if(response.backgroundShape === "triangle"){
+        let tri = new triangle(response.backgroundColor);
+        let txt = new text(tri, response.text, response.textColor);
+        writeToFile('logo.svg', txt.render());
+      }
+      if(response.backgroundShape === "circle"){
+        let cir = new circle(response.backgroundColor);
+        let txt = new text(cir, response.text, response.textColor);
+        writeToFile('logo.svg', txt.render());
+      }
+      if(response.backgroundShape === "square"){
+        let sqr = new square(response.backgroundColor);
+        let txt = new text(sqr, response.text, response.textColor);
+        writeToFile('logo.svg', txt.render());
+      }
+  // }
     });
 }
 
