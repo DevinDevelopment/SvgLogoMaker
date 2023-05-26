@@ -1,4 +1,4 @@
-const {circle} = require('./lib/circle');
+const {circle} = require('../lib/circle');
 
 const shape = new circle();
 shape.setColor("blue");

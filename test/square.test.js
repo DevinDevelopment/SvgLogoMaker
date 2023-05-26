@@ -1,4 +1,4 @@
-const {square} = require('./lib/square');
+const {square} = require('../lib/square');
 
 const shape = new square();
 shape.setColor("blue");
