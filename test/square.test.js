@@ -1,5 +1,11 @@
 const {square} = require('../lib/square');
 
-const shape = new square();
-shape.setColor("blue");
-expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+describe('square', () => {
+    describe('getColor', () => {
+        it('it should set the color of the shape', () => {
+            const shape = new square();
+            shape.setColor("blue");
+            expect(shape.render()).toEqual('<rect x="60" y="65" width="250" height="150" fill="blue"/>');
+        });
+    });
+});
