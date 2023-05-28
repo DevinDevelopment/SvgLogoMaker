@@ -40,6 +40,7 @@ After answering all the questions needed to generate the svg file you will notic
 To test application run "npm run test" and jest test will be ran.
 
 ![Website screenshot](./assets/images/Capture1.PNG)
+![Website screenshot](./assets/images/Capture2.PNG)
 
 
 ## Videos Demonstrating application:
