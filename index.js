@@ -57,11 +57,6 @@ function init() {
   // the data perameter will take the users response and push to our generateMarkdown function from the generateMarkdown file
   // generateMarkdown will be a function we are calling from another file which is why import require is needed
   .then((response) => {
-    // if((response.text).length() != 2){
-    //   console.log("text must be 3 characters long, try again!")
-    //   init();
-    // }
-    // else{
       if(response.backgroundShape === "triangle"){
         let tri = new triangle(response.backgroundColor);
         let txt = new text(tri, response.text, response.textColor);
@@ -77,7 +72,6 @@ function init() {
         let txt = new text(sqr, response.text, response.textColor);
         writeToFile('logo.svg', txt.render());
       }
-  // }
     });
 }
 

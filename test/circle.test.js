@@ -1,5 +1,7 @@
+//importing circle class
 const {circle} = require('../lib/circle');
 
+//test for circle class
 describe('circle', () => {
     describe('getColor', () => {
         it('it should set the color of the shape', () => {

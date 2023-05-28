@@ -1,5 +1,7 @@
+//importing triangle class
 const {triangle} = require('../lib/triangle');
 
+//test the triangle class
 describe('triangle', () => {
     describe('getColor', () => {
         it('it should set the color of the shape', () => {

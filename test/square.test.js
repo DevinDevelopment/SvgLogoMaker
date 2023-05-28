@@ -1,5 +1,7 @@
+//importing square class
 const {square} = require('../lib/square');
 
+//test for square class
 describe('square', () => {
     describe('getColor', () => {
         it('it should set the color of the shape', () => {
